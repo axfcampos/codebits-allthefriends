@@ -1,6 +1,6 @@
 {
   "name": "codebits-allthefriends",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Ask everyone on codebits to be your friend! It's awesome and not creepy at all!",
   "main": "index.js",
   "scripts": {
