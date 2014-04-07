@@ -20,7 +20,7 @@ Someone is bound to accept... right?
 
   Just call `codebits-allthefriends`
 
-  ![](https://raw.github.com/robotlolita/fuck-you/master/example.gif)
+  ![](https://raw.github.com/axfcampos/codebits-allthefriends/master/example.gif)
 
 ## Acknowledgements
 
