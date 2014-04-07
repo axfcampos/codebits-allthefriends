@@ -1,4 +1,4 @@
-#!/user/bin/env node
+#!/usr/bin/env node
 
 var codebits  =   require('codebits');
 var prompt    =   require('prompt');
@@ -6,10 +6,10 @@ var colors    =   require('colors');
 var fs        =   require('fs');
 
 var doge = [
-  'wow                                       ', 
-  '           such popularity                ', 
-  '                          much friendship ', 
-  '   amazing                                '];
+  'wow                                                           ', 
+  '                      such popularity                         ', 
+  '                                              much friendship ', 
+  '       amazing                                                '];
 
 console.log('\n -- To end your loneliness insert your username and password! -- \n'.bold.green);
 
@@ -44,19 +44,6 @@ var schema_yesno = {
   }
 };
 
-var addAllFriend = function (){
-  codebits.users.listAcceptedUsers( function (err, reply){
-    reply.forEach(function(entry){
-      codebits.users.addUserAsFriend(entry.id, function (err, reply){
-        var r = getRandomInt(0, 3);
-        process.stdout.write(doge[r] + '\r   ');
-      });
-    });
-    console.log('\n    \\o/ You are now the most popular person on codebits. Congratulations!  /o/ \n'.bold.magenta);
-    console.log('\n  ...adding all the friends...   \n'.bold.green);
-  });
-}; 
-
 
 var promptUser = function(_schema) {
   return prompt.get(_schema, function (err, result){
@@ -69,10 +56,8 @@ var promptUser = function(_schema) {
           console.log('**Login FAILED! Try again**'.bold.red);
           promptUser(schema);
         }else{
-          
-          var data = fs.readFileSync('./allthethings.txt', "utf8"); 
+          var data = fs.readFileSync(__dirname + '/allthethings.txt', "utf8"); 
           console.log(data.bold.yellow);
-
           prompt.start();
           prompt.get(schema_yesno, function (err, result){
             if(err){
@@ -80,7 +65,16 @@ var promptUser = function(_schema) {
               console.log('\n...leaving :( \n\n'.bold.red);
             }else{
               if(result.answer == 'yes'){
-                addAllFriend(); 
+                console.log('\n    \\o/ You are now the most popular person on codebits. Congratulations!  /o/ \n'.bold.magenta);
+                console.log('\n  ...adding all the friends...   \n'.bold.green);
+                codebits.users.listAcceptedUsers( function (err, reply){
+                  reply.forEach(function(entry){
+                    codebits.users.addUserAsFriend(entry.id, function (err, reply){
+                      var r = getRandomInt(0, 3);
+                      process.stdout.write(doge[r] + '\r   ');
+                    });
+                  });
+                });
               }else{
                 console.log('You chose to leave.. goodbye!'.bold.green);
               }
@@ -91,7 +85,6 @@ var promptUser = function(_schema) {
     });
   });
 };
-
 
 
 promptUser(schema);

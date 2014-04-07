@@ -1,10 +1,13 @@
 {
   "name": "codebits-allthefriends",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Ask everyone on codebits to be your friend! It's awesome and not creepy at all!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "codebits-allthefriends": "main.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +25,7 @@
   },
   "homepage": "https://github.com/axfcampos/codebits-allthefriends",
   "dependencies": {
-    "codebits": "~0.2.0",
+    "codebits": "~0.2.1",
     "prompt": "~0.2.12",
     "colors": "~0.6.2"
   }
