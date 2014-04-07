@@ -28,7 +28,7 @@ Someone is bound to accept... right?
 
 ## Codebits Node.js API
 
-  This little program was made to showcase the [API](https://github.com/diasdavid/codebits) developed by [David Dias](https://github.com/diasdavid) and [me](https://github.com/axfcampos). And also to end loneliness.
+  This little program was made to showcase the [API wrapper](https://github.com/diasdavid/codebits) developed by [David Dias](https://github.com/diasdavid) and [me](https://github.com/axfcampos). And also to end loneliness.
 
 - - -
 MIT licensed.
